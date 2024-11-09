@@ -3,7 +3,7 @@ import base64
 import pickle
 
 app = Flask(__name__)
-
+session_name = "pickle_session"
 
 @app.route("/sauce")
 def sauce():
@@ -12,12 +12,12 @@ def sauce():
 
 @app.route("/")
 def main():
-    session = request.cookies.get("session")
+    session = request.cookies.get(session_name)
     if session == None:
-        return '<form action="/login" method="POST">' +\
+        return '<form action="./login" method="POST">' +\
             '<p>Name: <input name="name" type="text"></p>' +\
             '<p>Age: <input name="age" type="number"></p>' +\
-            '<button>Submit</button></form><hr><a href="/sauce">Source code</a>'
+            '<button>Submit</button></form><hr><a href="./sauce">Source code</a>'
 
     else:
         user = pickle.loads(base64.b64decode(session))
@@ -30,6 +30,8 @@ def login():
         "name": request.form.get('name'),
         "age": int(request.form.get('age'))
     }))
-    resp = make_response(redirect('/'))
-    resp.set_cookie("session", user)
+    print(user)
+    print(type(user))
+    resp = make_response(redirect('./'))
+    resp.set_cookie(session_name, user)
     return resp

@@ -49,7 +49,7 @@ isset($_GET['source']) and die(show_source(__FILE__, true));
                         </section>
                     <?php endif; ?>
                     <hr>
-                    <a href="/?source">Source Code</a>
+                    <a href="./?source">Source Code</a>
                 </div>
             </div>
         </div>

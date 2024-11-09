@@ -42,9 +42,9 @@ def login():
     if username in users:
         if users[username] == password:
             session['user'] = request.form.get("username")
-            return redirect("/getflag")
-        return redirect("/?type=error&message=Password Incorrect Q_Q")
-    return redirect("/?type=error&message=User not found.")
+            return redirect("./getflag")
+        return redirect("./?type=error&message=Password Incorrect Q_Q")
+    return redirect("./?type=error&message=User not found.")
 
 
 @app.route("/getflag")
@@ -53,7 +53,7 @@ def flag():
         if session['user'] == 'admin':
             return 'FLAG{lab_flag}'
         return f'<p>嗨，{session["user"]}。只有 <code>admin</code> 能看到 FLAG 喔 :D</p>' +\
-            '<a href="/logout">Logout</a>'
+            '<a href="./logout">Logout</a>'
     return "wut?"
 
 
@@ -67,7 +67,7 @@ def report():
         return f'[error] url should start with "{request.url_root}"'
     
     return f'''
-<form method="POST" action="/report">
+<form method="POST" action="./report">
     <input type="text" name="url" placeholder="{request.url_root}...">
     <button>提交</button>
 </form>
@@ -78,7 +78,7 @@ def report():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect("/?message=Logout success!")
+    return redirect("./?message=Logout success!")
 
 
 if __name__ == '__main__':

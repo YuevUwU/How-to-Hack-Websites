@@ -24,4 +24,4 @@ if (!isset($_COOKIE['cat_session'])) {
 }
 ?>
 <p>Hello, <?= $cat->name ?>.</p>
-<a href="/?source">source code</a>
+<a href="./?source">source code</a>

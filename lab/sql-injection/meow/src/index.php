@@ -26,7 +26,7 @@
     while($res = $news->fetch_assoc()):
     ?>
     <p>
-        <a href="/view.php?id=<?=$res['id']?>"><?=$res['title']?></a>
+        <a href="./view.php?id=<?=$res['id']?>"><?=$res['title']?></a>
     </p>
     <?php endwhile; ?>
     </div>

@@ -12,18 +12,18 @@
 <body>
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/?page=inc/home">🐱</a>
+            <a class="navbar-item" href="./?page=inc/home">🐱</a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="/?page=inc/home">
+                <a class="navbar-item" href="./?page=inc/home">
                     Home
                 </a>
-                <a class="navbar-item" href="/?page=inc/about">
+                <a class="navbar-item" href="./?page=inc/about">
                     About
                 </a>
-                <a class="navbar-item" href="/admin.php">
+                <a class="navbar-item" href="./admin.php">
                     Admin
                 </a>
             </div>

@@ -3,6 +3,13 @@ const http = require("http");
 
 const app = express();
 
+// Please refer to nginx.conf.example for configuration
+app.use((req, res, next) => {
+    const subpath = req.headers['x-forwarded-path'] || '';
+    req.baseUrl = subpath; // Adjusts the base URL to the dynamic subpath
+    next();
+});
+
 app.get("/source", (req, res) => {
     return res.sendFile(__filename);
 })

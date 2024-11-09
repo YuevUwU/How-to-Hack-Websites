@@ -14,8 +14,8 @@
         <div class="container">
             <div class="column is-6 is-offset-3 has-text-centered">
                 <h1 class="title">Web Preview Card</h1>
-                <a href="/preview.php?url=https://example.com/">Web Preview</a> |
-                <a href="/flag.php">Flag (localhost only)</a>
+                <a href="./preview.php?url=https://example.com/">Web Preview</a> |
+                <a href="./flag.php">Flag (localhost only)</a>
             </div>
         </div>
     </section>

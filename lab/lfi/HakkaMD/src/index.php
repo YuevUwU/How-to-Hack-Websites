@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['notes'])) $_SESSION['notes'] = [];
-if (!isset($_GET['module'])) header("Location: /?module=module/home.php");
+if (!isset($_GET['module'])) header("Location: ./?module=module/home.php");
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +21,9 @@ if (!isset($_GET['module'])) header("Location: /?module=module/home.php");
             <div class="column is-6 is-offset-3">
                 <?php include($_GET['module']) ?>
                 <p>
-                    <a href="/?module=module/home.php">首頁</a> |
-                    <a href="/?module=module/list.php">筆記列表</a> |
-                    <a href="/phpinfo.php">phpinfo()</a>
+                    <a href="./?module=module/home.php">首頁</a> |
+                    <a href="./?module=module/list.php">筆記列表</a> |
+                    <a href="./phpinfo.php">phpinfo()</a>
                 </p>
             </div>
         </div>

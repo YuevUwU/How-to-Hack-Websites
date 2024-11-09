@@ -50,7 +50,7 @@ def login():
     password = request.form.get('password')
 
     if not username or not password:
-        return redirect("/?failed")
+        return redirect("./?failed")
 
     cur = get_db().execute(
         f"SELECT * FROM admin WHERE (username='{username}') AND (password='{b64encode(password.encode()).decode()}')"
@@ -61,7 +61,7 @@ def login():
     if res:
         return "FLAG{lab_flag}"
 
-    return redirect("/?failed")
+    return redirect("./?failed")
 
 
 if __name__ == '__main__':

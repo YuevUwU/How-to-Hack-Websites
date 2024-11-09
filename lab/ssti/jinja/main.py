@@ -10,7 +10,7 @@ def home():
         <input type="text" name="name" placeholder="Your name">
         <button>submit</button>
     </form>
-    <p><a href="/source">Source code</a></p>
+    <p><a href="./source">Source code</a></p>
     """)
 
 

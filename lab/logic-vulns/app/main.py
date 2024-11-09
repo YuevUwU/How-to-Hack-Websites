@@ -3,6 +3,7 @@ import secrets
 
 app = Flask(__name__)
 app.secret_key = secrets.token_bytes()
+app.config.update(SESSION_COOKIE_NAME='cat_shop_session')
 
 items = {5427: ("White Cat", 1024),
          5428: ("Orange Cat", 1024),
@@ -31,10 +32,10 @@ def buy_item():
     cost = int(request.form.get("cost"))
     item_id = int(request.form.get("item_id"))
     if cost > session['money']:
-        return "<script>alert(`You don't have enough money Q_Q`); location.href='/';</script>"
+        return "<script>alert(`You don't have enough money Q_Q`); location.href='./';</script>"
     session['money'] -= cost
     session['stuff'].append(items[item_id])
-    return "<script>alert(`Success!`); location='/'</script>"
+    return "<script>alert(`Success!`); location='./'</script>"
 
 
 if __name__ == "__main__":

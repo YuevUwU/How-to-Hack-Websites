@@ -37,7 +37,7 @@ isset($_GET['source']) and die(show_source(__FILE__, true));
                         </section>
                     <?php endif; ?>
                     <hr>
-                    <a id="magic">Magic</a> | <a href="/?source">Source Code</a>
+                    <a id="magic">Magic</a> | <a href="./?source">Source Code</a>
                 </div>
                 <article class="message is-link is-hidden is-size-4" id="hint">
                     <div class="message-body is-family-monospace">

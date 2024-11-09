@@ -13,8 +13,8 @@
     <section class="section">
         <div class="container">
             <div class="column is-10 is-offset-1">
-                <a href="/">⬅ HOME</a>
-                <form action="/preview.php">
+                <a href="./">⬅ HOME</a>
+                <form action="./preview.php">
                     <input class="input" type="text" name="url" value="<?= $_GET['url'] ?? '' ?>" placeholder="https://example.com">
                 </form>
                 <br>
