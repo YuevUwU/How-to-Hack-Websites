@@ -29,7 +29,7 @@ def login():
     user = base64.b64encode(pickle.dumps({
         "name": request.form.get('name'),
         "age": int(request.form.get('age'))
-    }))
+    })).decode('utf-8')
     resp = make_response(redirect('/'))
     resp.set_cookie("session", user)
     return resp
